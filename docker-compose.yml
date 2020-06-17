@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  mnist_classifier.api:
+    image: mnist_classifier_image
+    container_name: mnist_classifier_container
+    build:
+      context: "${PROJECT_PATH}"
+      dockerfile: "${PROJECT_PATH}/src/Dockerfile"
+    environment:
+      - ENVIRONMENT
+      - ELASTICSEARCH
+      - KIBANA
+      - LOGSTASH
+      - LOGLEVEL
+      - FLASK_DEBUG
+      - TF_SERVE_PORT
+      - TF_CONFIG_DIR
+    depends_on:
+      - elasticsearch
+    ports:
+    - "5000:5000"
+    - "8500:8500"
+    - "8501:8501"
+    - "9090:9090"
+    - "80:80"
+    volumes:
+    - /models:/models:ro
+    networks:
+      - mnist-classifier-network
+
+  elasticsearch:
+    image: sebp/elk
+    container_name: local_elasticsearch
+    ports:
+      - "5601:5601"
+      - "5044:5044"
+      - "9200:9200"
+    networks:
+      - mnist-classifier-network
+
+networks:
+  mnist-classifier-network:
+    name: mnist_classifier_network
