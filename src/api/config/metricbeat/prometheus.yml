@@ -1,0 +1,9 @@
+# Module: prometheus
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.6/metricbeat-module-prometheus.html
+
+- module: prometheus
+  period: 1s
+  hosts: ["localhost:${TF_SERVE_PORT}", "localhost"]
+  metrics_path: /metrics
+  #username: "user"
+  #password: "secret"
