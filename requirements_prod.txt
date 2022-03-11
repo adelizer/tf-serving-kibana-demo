@@ -1,6 +1,6 @@
 requests==2.20.0
 Flask==1.1.1
-numpy==1.17.0
+numpy==1.21.0
 opencv-python==4.2.0.32
 ujson==1.35
 flask-restplus==0.13.0
