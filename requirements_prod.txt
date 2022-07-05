@@ -2,7 +2,7 @@ requests==2.20.0
 Flask==1.1.1
 numpy==1.21.0
 opencv-python==4.2.0.32
-ujson==1.35
+ujson==5.4.0
 flask-restplus==0.13.0
 Werkzeug==0.16.1
 cmreshandler==1.0.0
