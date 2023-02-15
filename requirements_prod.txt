@@ -4,7 +4,7 @@ numpy==1.21.0
 opencv-python==4.2.0.32
 ujson==1.35
 flask-restplus==0.13.0
-Werkzeug==0.16.1
+Werkzeug==2.2.3
 cmreshandler==1.0.0
 elasticsearch==7.5.1
 Pillow==9.3.0
